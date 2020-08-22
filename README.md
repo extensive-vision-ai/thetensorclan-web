@@ -10,6 +10,10 @@
 
 ![demo2](demo2.gif)
 
+### LFW Face Recognizer
+
+![demo3](demo3.gif)
+
 ## 🚀 Build
 
 ```shell

@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Classifiers from "./components/Classifiers";
 import FaceSwap from "./components/FaceSwap";
 import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
+import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
 
 function App() {
     return (
@@ -41,6 +42,9 @@ function App() {
                             </Route>
                             <Route path="/indian-face-recognizer">
                                 <IndianFaceRecognizer />
+                            </Route>
+                            <Route path="/lfw-plus-recognizer">
+                                <LFWPlusRecognizer />
                             </Route>
                         </Switch>
                         <Footer />

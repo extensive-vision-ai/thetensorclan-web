@@ -72,6 +72,31 @@ const Home = () => {
                     </CardDeck>
                 </Col>
             </Row>
+            <Row className="mt-5">
+                <Col>
+                    <CardDeck>
+                        <Card className="shadow-lg">
+                            <Card.Body>
+                                <Card.Title className="font-weight-bold">
+                                    LWF Plus Facial Recognition
+                                </Card.Title>
+                                <Card.Text>
+                                    The Model here was trained on LFW Dataset +
+                                    Indian Faces Dataset
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Link to="/lfw-plus-recognizer">
+                                    <Button variant="dark" block>
+                                        Go to FaceRecognizer{" "}
+                                        <i className="fas fa-arrow-right"></i>
+                                    </Button>
+                                </Link>
+                            </Card.Footer>
+                        </Card>
+                    </CardDeck>
+                </Col>
+            </Row>
         </Container>
     );
 };

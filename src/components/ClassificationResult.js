@@ -11,7 +11,7 @@ const SmallTable = styled(Table)`
 
 const ClassificationResult = ({ results }) => {
     return (
-        <SmallTable size="sm" striped bordered responsive>
+        <Table size="lg" striped bordered responsive>
             <thead>
                 <tr>
                     <th>class_idx</th>
@@ -28,7 +28,7 @@ const ClassificationResult = ({ results }) => {
                     </tr>
                 ))}
             </tbody>
-        </SmallTable>
+        </Table>
     );
 };
 

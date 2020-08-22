@@ -86,6 +86,7 @@ const FaceSwap = () => {
                                     onChange={(e) =>
                                         setFaceOne(e.target.files[0])
                                     }
+                                    accept=".jpg,.png,.jpeg"
                                 />
                                 <Form.File.Label data-browse="Browse">
                                     {faceOne.name === undefined
@@ -117,6 +118,7 @@ const FaceSwap = () => {
                                     onChange={(e) =>
                                         setFaceTwo(e.target.files[0])
                                     }
+                                    accept=".jpg,.png,.jpeg"
                                 />
                                 <Form.File.Label data-browse="Browse">
                                     {faceTwo.name === undefined

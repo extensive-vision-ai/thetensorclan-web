@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import {
     Container,
     Form,
@@ -9,36 +9,81 @@ import {
     Toast,
     ProgressBar,
     Image,
+    Alert,
 } from "react-bootstrap";
-import { CLASSIFY_ENDPOINT } from "../constants/APIEndpoints";
+import {
+    CLASSIFY_ENDPOINT,
+    FACE_ALIGN_ENDPOINT,
+} from "../constants/APIEndpoints";
 import axios from "axios";
+
 import ClassificationResult from "./ClassificationResult";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
-const Classifiers = () => {
+const IndianFaceRecognizer = () => {
     const [file, setFile] = useState("");
-    const [modelType, setModelType] = useState("resnet34-imagenet");
-    const [fileName, setFileName] = useState("Please select an image");
+    const [fileName, setFileName] = useState("Please select a Face image");
     const [showMessage, setShowMessage] = useState(false);
     const [message, setMessage] = useState("");
     const [showLoading, setShowLoading] = useState(false);
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [results, setResults] = useState([]);
+    const [alignedFace, setAlignedFace] = useState("");
+
+    // https://stackoverflow.com/questions/4998908/convert-data-uri-to-file-then-append-to-formdata
+    function dataURLtoBlob(dataurl) {
+        var arr = dataurl.split(","),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]),
+            n = bstr.length,
+            u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new Blob([u8arr], { type: mime });
+    }
 
     const classifyImage = async () => {
         try {
             setMessage("");
+            setAlignedFace("");
             setShowMessage(false);
             setShowLoading(true);
+            setResults([]);
             const formData = new FormData();
             formData.append("file", file);
 
+            // align the face first
+            const aligned_face = await axios.post(
+                `${FACE_ALIGN_ENDPOINT}`,
+                formData,
+                {
+                    crossDomain: true,
+                    onUploadProgress: (progressEvent) => {
+                        setUploadPercentage(
+                            parseInt(
+                                Math.round(
+                                    (progressEvent.loaded * 100) /
+                                        progressEvent.total
+                                )
+                            )
+                        );
+                    },
+                }
+            );
+
+            setAlignedFace(aligned_face.data);
+
+            const alignedFormData = new FormData();
+            const alignedFaceFile = dataURLtoBlob(aligned_face.data);
+            alignedFormData.append("file", alignedFaceFile, "aligned.jpg");
+
             // request classification from end-point
             const results = await axios.post(
-                `${CLASSIFY_ENDPOINT}/${modelType}`,
-                formData,
+                `${CLASSIFY_ENDPOINT}/indian-face`,
+                alignedFormData,
                 {
                     crossDomain: true,
                     onUploadProgress: (progressEvent) => {
@@ -76,43 +121,28 @@ const Classifiers = () => {
             setFile(e.target.files[0]);
             setFileName(e.target.files[0].name);
         } else {
-            setFileName("Please select an Image");
+            setFileName("Please select a Face Image (should be in dataset)");
         }
     };
-
     return (
         <Container>
             <Form>
                 <Row>
                     <Col>
-                        <Form.Group
-                            as={Row}
-                            controlId="exampleForm.ControlSelect1"
-                            className="py-5"
-                        >
-                            <Form.Label>
-                                <h5>
-                                    <strong>Select Model</strong>
-                                </h5>
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                onChange={(e) => setModelType(e.target.value)}
-                                value={modelType}
-                            >
-                                <option value="resnet34-imagenet">
-                                    ImageNet Classifier - ResNet
-                                </option>
-                                <option value="mobilenetv2-ifo">
-                                    IFO Classifier - MobileNetV2
-                                </option>
-                            </Form.Control>
-                        </Form.Group>
                         <Form.Group as={Row}>
-                            <Form.Label>
+                            <Form.Label className="mb-5">
                                 <h5>
-                                    <strong>Select Image</strong>
+                                    <strong>Select Face Image</strong>
                                 </h5>
+
+                                <p>Supported Faces are:</p>
+                                <code>
+                                    ["Dr_APJ_Abdul_Kalam", "Dr_Sabita_Ghana",
+                                    "Gaur_Gopal_Das", "MS_Dhoni",
+                                    "Mukesh_Ambani", "Narendra_Modi",
+                                    "Ratan_Tata", "Rohan_Shravan",
+                                    "Sachin_Tendulkar", "Viswanathan_Anand"]
+                                </code>
                             </Form.Label>
 
                             <Form.File custom>
@@ -148,8 +178,24 @@ const Classifiers = () => {
                         onClick={() => classifyImage()}
                         disabled={file.name === undefined}
                     >
-                        Classify !
+                        Align and Classify !
                     </Button>
+                </Row>
+                <Row>
+                    <Col md={6} lg={6} className="mx-auto mt-5">
+                        {alignedFace !== "" && (
+                            <Fragment>
+                                <h1 className="text-center">Aligned Face</h1>
+                                <Image
+                                    src={alignedFace}
+                                    style={{ width: "85%" }}
+                                    className="mx-auto mt-5"
+                                    rounded
+                                    fluid
+                                />
+                            </Fragment>
+                        )}
+                    </Col>
                 </Row>
                 <Row>
                     <Col md={6} lg={6} className="mx-auto mt-5">
@@ -208,4 +254,4 @@ const Classifiers = () => {
     );
 };
 
-export default Classifiers;
+export default IndianFaceRecognizer;

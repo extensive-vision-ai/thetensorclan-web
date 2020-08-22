@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Classifiers from "./components/Classifiers";
 import FaceSwap from "./components/FaceSwap";
+import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
 
 function App() {
     return (
@@ -37,6 +38,9 @@ function App() {
                             </Route>
                             <Route path="/face-swap">
                                 <FaceSwap />
+                            </Route>
+                            <Route path="/indian-face-recognizer">
+                                <IndianFaceRecognizer />
                             </Route>
                         </Switch>
                         <Footer />

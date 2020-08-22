@@ -33,7 +33,7 @@ const Home = () => {
                         <Card className="shadow-lg">
                             <Card.Body>
                                 <Card.Title className="font-weight-bold">
-                                    FaceSwap
+                                    Face Swap
                                 </Card.Title>
                                 <Card.Text>
                                     Do you want to see how two people look like
@@ -45,6 +45,25 @@ const Home = () => {
                                 <Link to="/face-swap">
                                     <Button variant="dark" block>
                                         Go to FaceSwap{" "}
+                                        <i className="fas fa-arrow-right"></i>
+                                    </Button>
+                                </Link>
+                            </Card.Footer>
+                        </Card>
+                        <Card className="shadow-lg">
+                            <Card.Body>
+                                <Card.Title className="font-weight-bold">
+                                    Indian Face Recognizer
+                                </Card.Title>
+                                <Card.Text>
+                                    I've trained the model to recognize 10
+                                    Indian people Faces !
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Link to="/indian-face-recognizer">
+                                    <Button variant="dark" block>
+                                        Go to FaceRecognizer{" "}
                                         <i className="fas fa-arrow-right"></i>
                                     </Button>
                                 </Link>

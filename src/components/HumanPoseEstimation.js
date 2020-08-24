@@ -32,6 +32,7 @@ const HumanPoseEstimation = () => {
             // clear out the messages
             setShowMessage(false);
             setMessage("");
+            setPoseDetectedImage("");
             // show the progress bar
             setShowLoading(true);
             const results = await axios.post(

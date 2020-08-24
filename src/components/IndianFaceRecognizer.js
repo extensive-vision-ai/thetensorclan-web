@@ -9,7 +9,6 @@ import {
     Toast,
     ProgressBar,
     Image,
-    Alert,
 } from "react-bootstrap";
 import {
     CLASSIFY_ENDPOINT,

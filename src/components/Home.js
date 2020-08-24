@@ -8,7 +8,10 @@ const Home = () => {
             <Row>
                 <Col>
                     <CardDeck>
-                        <Card className="shadow-lg">
+                        <Card
+                            className="shadow-lg mb-3"
+                            style={{ minWidth: "18rem" }}
+                        >
                             <Card.Body>
                                 <Card.Title className="font-weight-bold">
                                     Classifier Models
@@ -30,7 +33,10 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
-                        <Card className="shadow-lg">
+                        <Card
+                            className="shadow-lg mb-3"
+                            style={{ minWidth: "18rem" }}
+                        >
                             <Card.Body>
                                 <Card.Title className="font-weight-bold">
                                     Face Swap
@@ -50,7 +56,10 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
-                        <Card className="shadow-lg">
+                        <Card
+                            className="shadow-lg mb-3"
+                            style={{ minWidth: "18rem" }}
+                        >
                             <Card.Body>
                                 <Card.Title className="font-weight-bold">
                                     Indian Face Recognizer
@@ -72,10 +81,13 @@ const Home = () => {
                     </CardDeck>
                 </Col>
             </Row>
-            <Row className="mt-5">
+            <Row className="mt-1">
                 <Col>
                     <CardDeck>
-                        <Card className="shadow-lg">
+                        <Card
+                            className="shadow-lg mb-3"
+                            style={{ minWidth: "18rem" }}
+                        >
                             <Card.Body>
                                 <Card.Title className="font-weight-bold">
                                     LWF Plus Facial Recognition
@@ -89,6 +101,29 @@ const Home = () => {
                                 <Link to="/lfw-plus-recognizer">
                                     <Button variant="dark" block>
                                         Go to FaceRecognizer{" "}
+                                        <i className="fas fa-arrow-right"></i>
+                                    </Button>
+                                </Link>
+                            </Card.Footer>
+                        </Card>
+
+                        <Card className="shadow-lg mb-3">
+                            <Card.Body>
+                                <Card.Title
+                                    className="font-weight-bold"
+                                    style={{ minWidth: "18rem" }}
+                                >
+                                    Human Pose Estimation
+                                </Card.Title>
+                                <Card.Text>
+                                    This model uses SOTA Human Pose Estimation
+                                    for Single Human Pose Detection
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Link to="/human-pose-estimation">
+                                    <Button variant="dark" block>
+                                        Go to HumanPoseEstimator{" "}
                                         <i className="fas fa-arrow-right"></i>
                                     </Button>
                                 </Link>

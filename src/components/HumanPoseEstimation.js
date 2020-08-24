@@ -1,43 +1,41 @@
 import React, { useState } from "react";
 import {
     Container,
-    Form,
     Row,
     Col,
+    Form,
+    Image,
     Button,
+    ProgressBar,
     Spinner,
     Toast,
-    ProgressBar,
-    Image,
 } from "react-bootstrap";
-import { CLASSIFY_ENDPOINT } from "../constants/APIEndpoints";
+import { HUMAN_POSE_ESTIMATION_ENDPOINT } from "../constants/APIEndpoints";
 import axios from "axios";
-import ClassificationResult from "./ClassificationResult";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
-const Classifiers = () => {
-    const [file, setFile] = useState("");
-    const [modelType, setModelType] = useState("resnet34-imagenet");
-    const [fileName, setFileName] = useState("Please select an image");
+const HumanPoseEstimation = () => {
+    const [humanImage, setHumanImage] = useState({});
+    const [poseDetectedImage, setPoseDetectedImage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [message, setMessage] = useState("");
     const [showLoading, setShowLoading] = useState(false);
     const [uploadPercentage, setUploadPercentage] = useState(0);
-    const [results, setResults] = useState([]);
 
-    const classifyImage = async () => {
+    const detectPose = async () => {
+        const formData = new FormData();
+        formData.append("file", humanImage);
+
         try {
-            setMessage("");
+            // clear out the messages
             setShowMessage(false);
+            setMessage("");
+            // show the progress bar
             setShowLoading(true);
-            const formData = new FormData();
-            formData.append("file", file);
-
-            // request classification from end-point
             const results = await axios.post(
-                `${CLASSIFY_ENDPOINT}/${modelType}`,
+                `${HUMAN_POSE_ESTIMATION_ENDPOINT}`,
                 formData,
                 {
                     crossDomain: true,
@@ -53,92 +51,62 @@ const Classifiers = () => {
                     },
                 }
             );
-            // console.log(JSON.stringify(results.data));
-            setResults(results.data);
+            setPoseDetectedImage(results.data);
         } catch (e) {
-            // some error occured, create a Toast !
+            // some error occured, reset states and show message
             setMessage(JSON.stringify(e));
             setShowMessage(true);
-            setResults([]);
+            setPoseDetectedImage("");
+            console.log(e);
         }
 
         // we are done, now turn off the loading and progress bar
         setShowLoading(false);
 
-        // reset the states
         setTimeout(() => {
             setUploadPercentage(0);
         }, 5000);
     };
 
-    const onFileSelect = (e) => {
-        if (e.target.files.length >= 1) {
-            setFile(e.target.files[0]);
-            setFileName(e.target.files[0].name);
-        } else {
-            setFileName("Please select an Image");
-        }
-    };
-
     return (
         <Container>
             <Form>
-                <Row>
+                <Row className="justify-content-around">
                     <Col>
-                        <Form.Group
-                            as={Row}
-                            controlId="exampleForm.ControlSelect1"
-                            className="py-5"
-                        >
-                            <Form.Label>
-                                <h5>
-                                    <strong>Select Model</strong>
-                                </h5>
-                            </Form.Label>
-                            <Form.Control
-                                as="select"
-                                onChange={(e) => setModelType(e.target.value)}
-                                value={modelType}
-                            >
-                                <option value="resnet34-imagenet">
-                                    ImageNet Classifier - ResNet
-                                </option>
-                                <option value="mobilenetv2-ifo">
-                                    IFO (Identified Flying Object) Classifier -
-                                    MobileNetV2
-                                </option>
-                            </Form.Control>
-                        </Form.Group>
                         <Form.Group as={Row}>
                             <Form.Label>
                                 <h5>
-                                    <strong>Select Image</strong>
+                                    <strong>Select Human Pose Image</strong>
                                 </h5>
+                                <code>
+                                    NOTE: The image must have "single" human
+                                    with some pose
+                                </code>
                             </Form.Label>
 
                             <Form.File custom>
                                 <Form.File.Input
-                                    onChange={onFileSelect}
+                                    onChange={(e) =>
+                                        setHumanImage(e.target.files[0])
+                                    }
                                     accept=".jpg,.png,.jpeg"
                                 />
                                 <Form.File.Label data-browse="Browse">
-                                    {fileName}
+                                    {humanImage.name === undefined
+                                        ? "Browse Human Image"
+                                        : humanImage.name}
                                 </Form.File.Label>
                             </Form.File>
+                            {humanImage.name && (
+                                <Image
+                                    src={URL.createObjectURL(humanImage)}
+                                    style={{ width: "85%" }}
+                                    className="mx-auto mt-5"
+                                    rounded
+                                    fluid
+                                />
+                            )}
                         </Form.Group>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={6} lg={6} className="mx-auto">
-                        {file.name && (
-                            <Image
-                                src={URL.createObjectURL(file)}
-                                style={{ width: "85%" }}
-                                className="mx-auto mt-5"
-                                rounded
-                                fluid
-                            />
-                        )}
                     </Col>
                 </Row>
                 <Row>
@@ -146,18 +114,11 @@ const Classifiers = () => {
                         variant="dark"
                         className="mt-5 mx-auto shadow-lg"
                         size="lg"
-                        onClick={() => classifyImage()}
-                        disabled={file.name === undefined}
+                        disabled={humanImage.name === undefined}
+                        onClick={() => detectPose()}
                     >
-                        Classify !
+                        Detect Pose !
                     </Button>
-                </Row>
-                <Row>
-                    <Col md={6} lg={6} className="mx-auto mt-5">
-                        {results.length > 0 && (
-                            <ClassificationResult results={results} />
-                        )}
-                    </Col>
                 </Row>
                 <Row>
                     <Col>
@@ -190,6 +151,20 @@ const Classifiers = () => {
                         Loading...
                     </Button>
                 </Row>
+                {poseDetectedImage !== "" && (
+                    <Row>
+                        <Col md={6} lg={6} className="mx-auto mt-5">
+                            <h1 className="text-center">Detected Pose</h1>
+                            <Image
+                                src={poseDetectedImage}
+                                style={{ width: "85%" }}
+                                className="mx-auto mt-5"
+                                rounded
+                                fluid
+                            />
+                        </Col>
+                    </Row>
+                )}
                 <Row>
                     <Toast
                         onClose={() => setShowMessage(false)}
@@ -209,4 +184,4 @@ const Classifiers = () => {
     );
 };
 
-export default Classifiers;
+export default HumanPoseEstimation;

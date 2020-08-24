@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Table } from "react-bootstrap";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-const SmallTable = styled(Table)`
-    * {
-        font-size: 0.8rem;
-    }
-`;
+// const SmallTable = styled(Table)`
+//     * {
+//         font-size: 0.8rem;
+//     }
+// `;
 
 const ClassificationResult = ({ results }) => {
     return (

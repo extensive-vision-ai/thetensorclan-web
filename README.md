@@ -14,6 +14,10 @@
 
 ![demo3](demo3.gif)
 
+### Monocular Human Pose Estimator
+
+![demo4](demo4.gif)
+
 ## 🚀 Build
 
 ```shell

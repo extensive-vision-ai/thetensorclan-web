@@ -12,6 +12,7 @@ import FaceSwap from "./components/FaceSwap";
 import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
 import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
 import HumanPoseEstimation from "./components/HumanPoseEstimation";
+import RedCarGAN from "./components/RedCarGAN";
 
 function App() {
     return (
@@ -49,6 +50,9 @@ function App() {
                             </Route>
                             <Route path="/human-pose-estimation">
                                 <HumanPoseEstimation />
+                            </Route>
+                            <Route path="/red-car-gan">
+                                <RedCarGAN />
                             </Route>
                         </Switch>
                         <Footer />

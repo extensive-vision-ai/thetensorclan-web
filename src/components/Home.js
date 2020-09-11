@@ -129,6 +129,29 @@ const Home = () => {
                                 </Link>
                             </Card.Footer>
                         </Card>
+
+                        <Card className="shadow-lg mb-3">
+                            <Card.Body>
+                                <Card.Title
+                                    className="font-weight-bold"
+                                    style={{ minWidth: "18rem" }}
+                                >
+                                    Red Car Generator
+                                </Card.Title>
+                                <Card.Text>
+                                    This is a custom GAN to generate Red
+                                    Coloured Cars !
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Link to="/red-car-gan">
+                                    <Button variant="dark" block>
+                                        Go to RedCarGAN{" "}
+                                        <i className="fas fa-arrow-right"></i>
+                                    </Button>
+                                </Link>
+                            </Card.Footer>
+                        </Card>
                     </CardDeck>
                 </Col>
             </Row>

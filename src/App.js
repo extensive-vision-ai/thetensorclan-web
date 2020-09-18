@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { Container, Alert } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -13,8 +13,10 @@ import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
 import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
 import HumanPoseEstimation from "./components/HumanPoseEstimation";
 import RedCarGAN from "./components/RedCarGAN";
+import MnistVae from "./components/MnistVae";
 
 function App() {
+    const [showAlert, setShowAlert] = useState(true);
     return (
         <ThemeProvider theme={{ fontFamily: "JetBrains Mono" }}>
             <Router>
@@ -23,15 +25,21 @@ function App() {
                     <Container>
                         <Header title="TheTensorClan" />
 
-                        <Alert variant="info">
-                            <Alert.Heading>Note</Alert.Heading>
-                            <p>
-                                The models are hosted on AWS Lambda, which needs
-                                a cold start, you might recieve err::TimedOut
-                                once or twice, just click on the button again to
-                                send one more Request !
-                            </p>
-                        </Alert>
+                        {showAlert && (
+                            <Alert
+                                variant="info"
+                                onClose={() => setShowAlert(false)}
+                                dismissible
+                            >
+                                <Alert.Heading>Note</Alert.Heading>
+                                <p>
+                                    The models are hosted on AWS Lambda, which
+                                    needs a cold start, you might recieve
+                                    err::TimedOut once or twice, just click on
+                                    the button again to send one more Request !
+                                </p>
+                            </Alert>
+                        )}
                         <Switch>
                             <Route exact path="/">
                                 <Home />
@@ -53,6 +61,9 @@ function App() {
                             </Route>
                             <Route path="/red-car-gan">
                                 <RedCarGAN />
+                            </Route>
+                            <Route path="/mnist-vae">
+                                <MnistVae />
                             </Route>
                         </Switch>
                         <Footer />

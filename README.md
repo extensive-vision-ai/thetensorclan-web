@@ -22,6 +22,10 @@
 
 ![demo5](demo5.gif)
 
+### MNIST VAE
+
+![demo6](demo6.gif)
+
 ## 🚀 Build
 
 ```shell

@@ -26,6 +26,10 @@
 
 ![demo6](demo6.gif)
 
+### Red Car VAE
+
+![demo7](demo7.gif)
+
 ## 🚀 Build
 
 ```shell

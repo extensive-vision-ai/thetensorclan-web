@@ -14,6 +14,7 @@ import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
 import HumanPoseEstimation from "./components/HumanPoseEstimation";
 import RedCarGAN from "./components/RedCarGAN";
 import MnistVae from "./components/MnistVae";
+import RedCarVAE from "./components/RedCarVAE";
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
@@ -64,6 +65,9 @@ function App() {
                             </Route>
                             <Route path="/mnist-vae">
                                 <MnistVae />
+                            </Route>
+                            <Route path="/red-car-vae">
+                                <RedCarVAE />
                             </Route>
                         </Switch>
                         <Footer />

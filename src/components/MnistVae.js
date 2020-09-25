@@ -134,7 +134,7 @@ const MnistVae = () => {
                 dstCanvasRef.current
             );
         };
-        if (isReady) {
+        if (decoderInferenceSession) {
             updateCanvas();
         }
 
@@ -187,23 +187,17 @@ const MnistVae = () => {
         };
 
         const reconstructDrawing = async () => {
-            if (isReady) {
-                const scaledImage = resampleCanvasImage(
-                    canvasRef.current,
-                    32,
-                    32
-                );
+            const scaledImage = resampleCanvasImage(canvasRef.current, 32, 32);
 
-                const imageArray = imageDataRgbaToNdarray(scaledImage);
+            const imageArray = imageDataRgbaToNdarray(scaledImage);
 
-                var monoImage = NdarrayAlphaToMono(imageArray);
-                ops.divseq(monoImage, 255.0);
-                var tensor = ndArrayToTensor(monoImage, 1, 1, 32, 32);
+            var monoImage = NdarrayAlphaToMono(imageArray);
+            ops.divseq(monoImage, 255.0);
+            var tensor = ndArrayToTensor(monoImage, 1, 1, 32, 32);
 
-                const output = await encoderInferenceSession.run([tensor]);
+            const output = await encoderInferenceSession.run([tensor]);
 
-                setLatentz(Array.from(output.get("output").data));
-            }
+            setLatentz(Array.from(output.get("output").data));
         };
 
         const handleMouseUp = (evt) => {
@@ -336,10 +330,7 @@ const MnistVae = () => {
 
     return (
         <Container fluid>
-            <Row
-                className="justify-content-center"
-                style={{ display: isReady ? "none" : "block" }}
-            >
+            <Row style={{ display: isReady ? "none" : "block" }}>
                 <Spinner animation="border" role="status" size="lg" />
                 <h1>Loading Models ...</h1>
             </Row>

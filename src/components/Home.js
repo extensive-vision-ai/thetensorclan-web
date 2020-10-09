@@ -59,6 +59,13 @@ const Home = () => {
             btntext: "Go to RedCarVAE",
             url: "/red-car-vae",
         },
+        {
+            title: "IFO Super Resolution",
+            body:
+                "Convert a Low Resolution Identified Flying Object and super resolutiohn it to 2X !",
+            btntext: "Go to SuperResolution",
+            url: "ifo-sr",
+        },
     ];
 
     return (

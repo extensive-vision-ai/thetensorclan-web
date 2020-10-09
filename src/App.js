@@ -15,6 +15,7 @@ import HumanPoseEstimation from "./components/HumanPoseEstimation";
 import RedCarGAN from "./components/RedCarGAN";
 import MnistVae from "./components/MnistVae";
 import RedCarVAE from "./components/RedCarVAE";
+import IFOSR from "./components/IFOSR";
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
@@ -68,6 +69,9 @@ function App() {
                             </Route>
                             <Route path="/red-car-vae">
                                 <RedCarVAE />
+                            </Route>
+                            <Route path="/ifo-sr">
+                                <IFOSR />
                             </Route>
                         </Switch>
                         <Footer />

@@ -22,6 +22,17 @@ const SRResult = ({ results }) => {
             <Row className="justify-content-center">
                 <Image src={results} style={{ width: "85%" }} rounded fluid />
             </Row>
+            <Row className="justify-content-center">
+                <Button
+                    variant="dark"
+                    className="shadow-lg mt-5"
+                    size="md"
+                    href={results}
+                    download="result.png"
+                >
+                    Download
+                </Button>
+            </Row>
         </>
     );
 };

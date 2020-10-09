@@ -30,6 +30,10 @@
 
 ![demo7](demo7.gif)
 
+### IFO Super Resolution
+
+![demo8](demo8.gif)
+
 ## 🚀 Build
 
 ```shell

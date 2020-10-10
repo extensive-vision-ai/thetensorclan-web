@@ -16,12 +16,14 @@ import RedCarGAN from "./components/RedCarGAN";
 import MnistVae from "./components/MnistVae";
 import RedCarVAE from "./components/RedCarVAE";
 import IFOSR from "./components/IFOSR";
+import ScrollToTop from "./components/helpers/ScrollToTop";
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
     return (
         <ThemeProvider theme={{ fontFamily: "JetBrains Mono" }}>
             <Router>
+                <ScrollToTop />
                 <Fragment>
                     <GlobalStyles />
                     <Container>

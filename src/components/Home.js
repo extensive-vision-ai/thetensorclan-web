@@ -69,12 +69,18 @@ const Home = () => {
     ];
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 uk-animation-scale-up">
             <Row xl={3} xs={1} className="justify-content-around">
                 {cardsData.map((card, idx) => (
-                    <Container as={Col} className="p-2">
+                    <Container
+                        as={Col}
+                        className="p-2"
+                        uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${
+                            idx * 100
+                        } ; repeat: true`}
+                    >
                         <Card
-                            className="shadow-lg p-0 m-0"
+                            className="shadow-lg p-0 m-0 uk-card"
                             style={{
                                 minWidth: "18rem",
                                 height: "15rem",

@@ -15,6 +15,7 @@ import {
 import axios from "axios";
 
 import { GENERATORS_ENDPOINT } from "../constants/APIEndpoints";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -128,7 +129,7 @@ const RedCarGAN = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Row>
                 <Col>
                     <Alert variant="warning">
@@ -277,7 +278,7 @@ const RedCarGAN = () => {
                     </Row>
                 </Col>
             </Row>
-        </Container>
+        </FadeInContainer>
     );
 };
 

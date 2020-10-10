@@ -17,6 +17,7 @@ import {
 import axios from "axios";
 
 import ClassificationResult from "./ClassificationResult";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -124,7 +125,7 @@ const IndianFaceRecognizer = () => {
         }
     };
     return (
-        <Container>
+        <FadeInContainer>
             <Form>
                 <Row>
                     <Col>
@@ -249,7 +250,7 @@ const IndianFaceRecognizer = () => {
                     </Toast>
                 </Row>
             </Form>
-        </Container>
+        </FadeInContainer>
     );
 };
 

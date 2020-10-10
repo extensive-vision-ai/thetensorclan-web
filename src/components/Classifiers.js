@@ -13,6 +13,7 @@ import {
 import { CLASSIFY_ENDPOINT } from "../constants/APIEndpoints";
 import axios from "axios";
 import ClassificationResult from "./ClassificationResult";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -81,7 +82,7 @@ const Classifiers = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Form>
                 <Row>
                     <Col>
@@ -205,7 +206,7 @@ const Classifiers = () => {
                     </Toast>
                 </Row>
             </Form>
-        </Container>
+        </FadeInContainer>
     );
 };
 

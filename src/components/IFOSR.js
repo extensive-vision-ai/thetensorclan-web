@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import { GENERATORS_ENDPOINT } from "../constants/APIEndpoints";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -85,7 +86,7 @@ const IFOSR = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Row>
                 <Col>
                     <Alert variant="warning">
@@ -181,7 +182,7 @@ const IFOSR = () => {
                     </Toast>
                 </Col>
             </Row>
-        </Container>
+        </FadeInContainer>
     );
 };
 

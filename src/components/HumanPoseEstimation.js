@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import { HUMAN_POSE_ESTIMATION_ENDPOINT } from "../constants/APIEndpoints";
 import axios from "axios";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -70,7 +71,7 @@ const HumanPoseEstimation = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Form>
                 <Row className="justify-content-around">
                     <Col>
@@ -181,7 +182,7 @@ const HumanPoseEstimation = () => {
                     </Toast>
                 </Row>
             </Form>
-        </Container>
+        </FadeInContainer>
     );
 };
 

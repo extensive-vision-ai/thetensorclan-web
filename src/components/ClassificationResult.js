@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Table } from "react-bootstrap";
+import FadeInContainer from "./animated/FadeInContainer";
 // import styled from "styled-components";
 
 // const SmallTable = styled(Table)`
@@ -11,24 +12,26 @@ import { Table } from "react-bootstrap";
 
 const ClassificationResult = ({ results }) => {
     return (
-        <Table size="lg" striped bordered responsive>
-            <thead>
-                <tr>
-                    <th>class_idx</th>
-                    <th>class_name</th>
-                    <th>confidence</th>
-                </tr>
-            </thead>
-            <tbody>
-                {results.map((e, idx) => (
-                    <tr key={idx}>
-                        <td>{e.class_idx}</td>
-                        <td>{e.class_name}</td>
-                        <td>{e.confidence.toFixed(4)}</td>
+        <FadeInContainer>
+            <Table size="lg" striped bordered responsive>
+                <thead>
+                    <tr>
+                        <th>class_idx</th>
+                        <th>class_name</th>
+                        <th>confidence</th>
                     </tr>
-                ))}
-            </tbody>
-        </Table>
+                </thead>
+                <tbody>
+                    {results.map((e, idx) => (
+                        <tr key={idx}>
+                            <td>{e.class_idx}</td>
+                            <td>{e.class_name}</td>
+                            <td>{e.confidence.toFixed(4)}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+        </FadeInContainer>
     );
 };
 

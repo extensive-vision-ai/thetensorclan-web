@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import { AUTOENCODERS_ENDPOINT } from "../constants/APIEndpoints";
+import FadeInContainer from "./animated/FadeInContainer";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -88,7 +89,7 @@ const RedCarVAE = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Row>
                 <Col>
                     <Alert variant="warning">
@@ -182,7 +183,7 @@ const RedCarVAE = () => {
                     </Toast>
                 </Col>
             </Row>
-        </Container>
+        </FadeInContainer>
     );
 };
 

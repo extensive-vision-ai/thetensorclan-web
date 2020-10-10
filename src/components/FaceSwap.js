@@ -11,6 +11,7 @@ import {
     Toast,
 } from "react-bootstrap";
 import { FACE_SWAP_ENDPOINT } from "../constants/APIEndpoints";
+import FadeInContainer from "./animated/FadeInContainer";
 import axios from "axios";
 
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
@@ -70,7 +71,7 @@ const FaceSwap = () => {
     };
 
     return (
-        <Container>
+        <FadeInContainer>
             <Form>
                 <Row className="justify-content-around">
                     <Col sm={12} md={8} lg={5} className="m-1">
@@ -216,7 +217,7 @@ const FaceSwap = () => {
                     </Toast>
                 </Row>
             </Form>
-        </Container>
+        </FadeInContainer>
     );
 };
 

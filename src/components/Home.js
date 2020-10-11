@@ -75,9 +75,9 @@ const Home = () => {
                     <Container
                         as={Col}
                         className="p-2"
-                        uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${
+                        data-uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${
                             idx * 100
-                        } ; repeat: true`}
+                        } ; repeat: false`}
                     >
                         <Card
                             className="shadow-lg p-0 m-0 uk-card"

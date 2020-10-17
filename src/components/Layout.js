@@ -10,7 +10,9 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(true);
+    const devMode = false;
+
+    const [isLoading, setIsLoading] = useState(!devMode);
     return isLoading ? (
         <Loader
             onFinishLoad={() => {

@@ -66,6 +66,13 @@ const Home = () => {
             btntext: "Go to SuperResolution",
             url: "ifo-sr",
         },
+        {
+            title: "Text Classifiers",
+            body:
+                "Try various different text classification nlp models, from sentiment analysis to multi class classification",
+            btntext: "Go to TextClassifiers",
+            url: "text-classifiers",
+        },
     ];
 
     return (
@@ -76,7 +83,7 @@ const Home = () => {
                         as={Col}
                         className="p-2"
                         data-uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${
-                            idx * 100
+                            idx * 50
                         } ; repeat: false`}
                     >
                         <Card

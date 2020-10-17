@@ -18,6 +18,7 @@ import RedCarVAE from "./components/RedCarVAE";
 import IFOSR from "./components/IFOSR";
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import Layout from "./components/Layout";
+import TextClassifer from "./components/TextClassifier";
 
 const loader = document.querySelector(".preloader");
 
@@ -26,10 +27,6 @@ const addClass = () => loader.classList.add("loader-hide");
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
-    useEffect(() => {
-        // showLoader();
-        // addClass();
-    }, []);
 
     return (
         <ThemeProvider theme={{ fontFamily: "JetBrains Mono" }}>
@@ -87,6 +84,9 @@ function App() {
                                 </Route>
                                 <Route path="/ifo-sr">
                                     <IFOSR />
+                                </Route>
+                                <Route path="/text-classifiers">
+                                    <TextClassifer />
                                 </Route>
                             </Switch>
                             <Footer />

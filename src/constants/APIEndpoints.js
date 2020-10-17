@@ -4,3 +4,4 @@ export const FACE_SWAP_ENDPOINT = `https://foqlzc9qgh.execute-api.ap-south-1.ama
 export const HUMAN_POSE_ESTIMATION_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/human-pose`;
 export const GENERATORS_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/generators`;
 export const AUTOENCODERS_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/autoencoders`;
+export const TEXT_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/text`;

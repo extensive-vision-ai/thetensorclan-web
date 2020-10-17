@@ -34,6 +34,10 @@
 
 ![demo8](demo8.gif)
 
+### Text Classification
+
+![demo9](demo9.gif)
+
 ## 🚀 Build
 
 ```shell

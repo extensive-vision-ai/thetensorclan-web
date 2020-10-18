@@ -3,6 +3,21 @@
     <head>
         <meta charset="utf-8" />
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-66256732-4"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-66256732-4");
+        </script>
+
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -27,11 +42,41 @@
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/js/uikit-icons.min.js"></script>
 
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="%PUBLIC_URL%/favicon-32x32.png?v=LbxMzppQaM"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="%PUBLIC_URL%/favicon-16x16.png?v=LbxMzppQaM"
+        />
+        <link
+            rel="shortcut icon"
+            href="%PUBLIC_URL%/favicon.ico?v=LbxMzppQaM"
+        />
+        <link
+            rel="mask-icon"
+            href="%PUBLIC_URL%/safari-pinned-tab.svg?v=LbxMzppQaM"
+            color="#000000"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="description" content="TheTensorClan" />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="%PUBLIC_URL%/apple-touch-icon.png?v=LbxMzppQaM"
+        />
+        <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
+        <link
+            rel="manifest"
+            href="%PUBLIC_URL%/site.webmanifest?v=LbxMzppQaM"
+        />
         <title>TheTensorClan</title>
     </head>
     <body>

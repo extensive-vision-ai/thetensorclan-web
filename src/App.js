@@ -1,24 +1,41 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { Container, Alert } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import GlobalStyles from "./components/GlobalStyles";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Footer from "./components/Footer";
-import Classifiers from "./components/Classifiers";
-import FaceSwap from "./components/FaceSwap";
-import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
-import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
-import HumanPoseEstimation from "./components/HumanPoseEstimation";
-import RedCarGAN from "./components/RedCarGAN";
-import MnistVae from "./components/MnistVae";
-import RedCarVAE from "./components/RedCarVAE";
-import IFOSR from "./components/IFOSR";
+import {
+    GlobalStyles,
+    Header,
+    Home,
+    Footer,
+    Classifiers,
+    FaceSwap,
+    IndianFaceRecognizer,
+    LFWPlusRecognizer,
+    HumanPoseEstimation,
+    RedCarGAN,
+    RedCarVAE,
+    IFOSR,
+    TextClassifier,
+    MnistVae,
+} from "./components";
+
+// import GlobalStyles from "./components/GlobalStyles";
+// import Header from "./components/Header";
+// import Home from "./components/Home";
+// import Footer from "./components/Footer";
+// import Classifiers from "./components/Classifiers";
+// import FaceSwap from "./components/FaceSwap";
+// import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
+// import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
+// import HumanPoseEstimation from "./components/HumanPoseEstimation";
+// import RedCarGAN from "./components/RedCarGAN";
+// import MnistVae from "./components/MnistVae";
+// import RedCarVAE from "./components/RedCarVAE";
+// import IFOSR from "./components/IFOSR";
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import Layout from "./components/Layout";
-import TextClassifer from "./components/TextClassifier";
+// import TextClassifer from "./components/TextClassifier";
 
 const loader = document.querySelector(".preloader");
 
@@ -86,7 +103,7 @@ function App() {
                                     <IFOSR />
                                 </Route>
                                 <Route path="/text-classifiers">
-                                    <TextClassifer />
+                                    <TextClassifier />
                                 </Route>
                             </Switch>
                             <Footer />

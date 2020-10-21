@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, CardDeck, Card, Row, Col, Button } from "react-bootstrap";
+import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -80,6 +80,7 @@ const Home = () => {
             <Row xl={3} xs={1} className="justify-content-around">
                 {cardsData.map((card, idx) => (
                     <Container
+                        key={idx}
                         as={Col}
                         className="p-2"
                         data-uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${

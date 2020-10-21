@@ -129,7 +129,10 @@ const TextClassifier = () => {
                     <Col md={7} sm={10}>
                         <InputGroup>
                             <InputGroup.Prepend>
-                                <InputGroup.Text>📄</InputGroup.Text>
+                                <InputGroup.Text>
+                                    {" "}
+                                    <span role="img"> 📄</span>
+                                </InputGroup.Text>
                             </InputGroup.Prepend>
                             <Form.Control
                                 size="lg"

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import media from "../media";
 
 const StyledLoaderContainer = styled.div`
     width: 100vw;
@@ -36,6 +37,10 @@ const StyledLoader = styled.div`
 
     svg {
         width: 80vw;
+
+        ${media.lessThan("medium")`
+            width: 100vw;
+        `}
     }
 
     svg .svg-elem-1 {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-    Container,
     Row,
     Col,
     Form,
@@ -109,6 +108,7 @@ const RedCarVAE = () => {
                             <a
                                 href="https://github.com/satyajitghana/TSAI-DeepVision-EVA4.0-Phase-2/tree/master/06-GenerativeAdversarialNetworks/car_images_100x100/red_cars"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 Link to Car Images
                             </a>

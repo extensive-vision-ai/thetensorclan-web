@@ -13,3 +13,4 @@ export { default as RedCarGAN } from "./RedCarGAN";
 export { default as RedCarVAE } from "./RedCarVAE";
 export { default as TextClassifier } from "./TextClassifier";
 export { default as MnistVae } from "./MnistVae";
+export { default as StyleTransfer } from "./StyleTransfer";

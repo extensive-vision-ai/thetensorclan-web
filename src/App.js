@@ -18,29 +18,11 @@ import {
     IFOSR,
     TextClassifier,
     MnistVae,
+    StyleTransfer,
 } from "./components";
 
-// import GlobalStyles from "./components/GlobalStyles";
-// import Header from "./components/Header";
-// import Home from "./components/Home";
-// import Footer from "./components/Footer";
-// import Classifiers from "./components/Classifiers";
-// import FaceSwap from "./components/FaceSwap";
-// import IndianFaceRecognizer from "./components/IndianFaceRecognizer";
-// import LFWPlusRecognizer from "./components/LFWPlusRecognizer";
-// import HumanPoseEstimation from "./components/HumanPoseEstimation";
-// import RedCarGAN from "./components/RedCarGAN";
-// import MnistVae from "./components/MnistVae";
-// import RedCarVAE from "./components/RedCarVAE";
-// import IFOSR from "./components/IFOSR";
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import Layout from "./components/Layout";
-// import TextClassifer from "./components/TextClassifier";
-
-const loader = document.querySelector(".preloader");
-
-const showLoader = () => loader.classList.remove("preloader");
-const addClass = () => loader.classList.add("loader-hide");
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
@@ -105,6 +87,9 @@ function App() {
                                 <Route path="/text-classifiers">
                                     <TextClassifier />
                                 </Route>
+                                <Router path="/style-transfer">
+                                    <StyleTransfer />
+                                </Router>
                             </Switch>
                             <Footer />
                         </Container>

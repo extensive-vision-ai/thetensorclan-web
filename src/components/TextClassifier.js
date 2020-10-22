@@ -131,7 +131,9 @@ const TextClassifier = () => {
                             <InputGroup.Prepend>
                                 <InputGroup.Text>
                                     {" "}
-                                    <span role="img"> 📄</span>
+                                    <span role="img" aria-label="text">
+                                        📄
+                                    </span>
                                 </InputGroup.Text>
                             </InputGroup.Prepend>
                             <Form.Control

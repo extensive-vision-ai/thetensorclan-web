@@ -13,12 +13,12 @@ const TitleWrapper = styled(Link)`
 
     /* Small devices (landscape phones, 576px and up)*/
     @media (min-width: 576px) and (max-width: 767.98px) {
-        width: 100%;
+        width: 120%;
     }
 
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
-        width: 100%;
+        width: 120%;
     }
 `;
 
@@ -31,12 +31,12 @@ const LogoImage = styled(Image)`
 
     /* Small devices (landscape phones, 576px and up)*/
     @media (min-width: 576px) and (max-width: 767.98px) {
-        width: 110%;
+        width: 120%;
     }
 
     /* Extra small devices (portrait phones, less than 576px) */
     @media (max-width: 575.98px) {
-        width: 110%;
+        width: 120%;
     }
 `;
 

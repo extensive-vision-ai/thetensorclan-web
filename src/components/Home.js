@@ -19,6 +19,13 @@ const Home = () => {
             url: "/face-swap",
         },
         {
+            title: "Style Transfer",
+            body:
+                "Try out various awesome image filter styles on your image/portraits!",
+            btntext: "Go to StyleTransfer",
+            url: "/style-transfer",
+        },
+        {
             title: "Indian Face Recognizer",
             body:
                 "I've trained the model to recognize 10 Indian people Faces !",
@@ -62,7 +69,7 @@ const Home = () => {
         {
             title: "IFO Super Resolution",
             body:
-                "Convert a Low Resolution Identified Flying Object and super resolutiohn it to 2X !",
+                "Convert a Low Resolution Identified Flying Object and super resolution it to 2X !",
             btntext: "Go to SuperResolution",
             url: "ifo-sr",
         },

@@ -10,7 +10,7 @@ const StyledContent = styled.div`
 `;
 
 const Layout = ({ children }) => {
-    const devMode = false;
+    const devMode = true;
 
     const [isLoading, setIsLoading] = useState(!devMode);
     return isLoading ? (

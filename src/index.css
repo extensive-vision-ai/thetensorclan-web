@@ -12,7 +12,16 @@
   -webkit-font-feature-settings: "liga"on, "calt"on;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: 'JetBrains Mono';
+  font-family: 'JetBrains Mono' !important;
+}
+
+/* Fix FontAwesome conflicts with UiKit */
+.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+}
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free" !important;
 }
 
 body {

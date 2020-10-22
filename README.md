@@ -38,6 +38,10 @@
 
 ![demo9](demo9.gif)
 
+### Style Transfer
+
+![demo10](demo10.gif)
+
 ## 🚀 Build
 
 ```shell

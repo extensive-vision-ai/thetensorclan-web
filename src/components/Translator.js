@@ -31,7 +31,7 @@ const Translator = () => {
                 }
             );
 
-            console.log(result);
+            // console.log(result);
 
             setResult(result.data);
         } catch (e) {

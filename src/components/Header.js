@@ -43,7 +43,13 @@ const LogoImage = styled(Image)`
 const Header = ({ title }) => {
     return (
         <Container>
-            <Navbar variant="light" bg="none" sticky="top" className="px-2">
+            <Navbar
+                variant="light"
+                bg="none"
+                sticky="top"
+                className="px-2"
+                expand="lg"
+            >
                 <TitleWrapper to="/" className="mx-auto">
                     <LogoImage src={logo} className="mx-auto" />
                 </TitleWrapper>

@@ -80,6 +80,13 @@ const Home = () => {
             btntext: "Go to TextClassifiers",
             url: "text-classifiers",
         },
+        {
+            title: "DE to EN Translator",
+            body:
+                "This is a pretty simple German to English text translator that can translate upto 100 words pretty decently !",
+            btntext: "Go to Translator",
+            url: "translator",
+        },
     ];
 
     return (

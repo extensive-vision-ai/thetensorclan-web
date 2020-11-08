@@ -6,3 +6,4 @@ export const GENERATORS_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/
 export const AUTOENCODERS_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/autoencoders`;
 export const TEXT_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/text`;
 export const STYLE_TRANSFER_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/style-transfer`;
+export const TRANSLATOR_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/text/translate`;

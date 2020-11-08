@@ -23,6 +23,7 @@ import {
 
 import ScrollToTop from "./components/helpers/ScrollToTop";
 import Layout from "./components/Layout";
+import Translator from "./components/Translator";
 
 function App() {
     const [showAlert, setShowAlert] = useState(true);
@@ -89,6 +90,9 @@ function App() {
                                 </Route>
                                 <Router path="/style-transfer">
                                     <StyleTransfer />
+                                </Router>
+                                <Router path="/translator">
+                                    <Translator />
                                 </Router>
                             </Switch>
                             <Footer />

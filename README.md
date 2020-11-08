@@ -42,6 +42,10 @@
 
 ![demo10](demo10.gif)
 
+### German to English Translator
+
+![demo11](demo11.gif)
+
 ## 🚀 Build
 
 ```shell

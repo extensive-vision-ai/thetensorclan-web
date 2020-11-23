@@ -46,6 +46,10 @@
 
 ![demo11](demo11.gif)
 
+### Image Captioning
+
+![demo12](demo12.gif)
+
 ## 🚀 Build
 
 ```shell

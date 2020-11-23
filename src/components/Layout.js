@@ -20,12 +20,12 @@ const Layout = ({ children }) => {
             }}
         />
     ) : (
-        <StyledContent>
-            <main>
-                <FadeInContainer>{children}</FadeInContainer>
-            </main>
-        </StyledContent>
-    );
+            <StyledContent>
+                <main>
+                    <FadeInContainer>{children}</FadeInContainer>
+                </main>
+            </StyledContent>
+        );
 };
 
 export default Layout;

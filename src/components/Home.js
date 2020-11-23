@@ -26,6 +26,26 @@ const Home = () => {
             url: "/style-transfer",
         },
         {
+            title: "Image Captioning",
+            body: "This is an Image to Text Tranlation tool",
+            btntext: "Go to ImageCaptioning",
+            url: "/image-captioning"
+        },
+        {
+            title: "MNIST VAE",
+            body:
+                "Play with the MNIST VAE, see how a machine learns to encode and decode information",
+            btntext: "Go to VAE",
+            url: "/mnist-vae",
+        },
+        {
+            title: "Text Classifiers",
+            body:
+                "Try various different text classification nlp models, from sentiment analysis to multi class classification",
+            btntext: "Go to TextClassifiers",
+            url: "text-classifiers",
+        },
+        {
             title: "Indian Face Recognizer",
             body:
                 "I've trained the model to recognize 10 Indian people Faces !",
@@ -53,13 +73,6 @@ const Home = () => {
             url: "/red-car-gan",
         },
         {
-            title: "MNIST VAE",
-            body:
-                "Play with the MNIST VAE, see how a machine learns to encode and decode information",
-            btntext: "Go to VAE",
-            url: "/mnist-vae",
-        },
-        {
             title: "Red Car VAE",
             body:
                 "Reconstructs a Red Car Image, see how well it does, something like this can be used for Image compression",
@@ -72,13 +85,6 @@ const Home = () => {
                 "Convert a Low Resolution Identified Flying Object and super resolution it to 2X !",
             btntext: "Go to SuperResolution",
             url: "ifo-sr",
-        },
-        {
-            title: "Text Classifiers",
-            body:
-                "Try various different text classification nlp models, from sentiment analysis to multi class classification",
-            btntext: "Go to TextClassifiers",
-            url: "text-classifiers",
         },
         {
             title: "DE to EN Translator",
@@ -97,9 +103,8 @@ const Home = () => {
                         key={idx}
                         as={Col}
                         className="p-2"
-                        data-uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${
-                            idx * 50
-                        } ; repeat: false`}
+                        data-uk-scrollspy={`cls: uk-animation-slide-bottom; target: .uk-card; delay: ${idx * 50
+                            } ; repeat: false`}
                     >
                         <Card
                             className="shadow-lg p-0 m-0 uk-card"

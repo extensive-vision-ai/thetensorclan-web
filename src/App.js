@@ -19,6 +19,7 @@ import {
     TextClassifier,
     MnistVae,
     StyleTransfer,
+    ImageCaptioning,
 } from "./components";
 
 import ScrollToTop from "./components/helpers/ScrollToTop";
@@ -93,6 +94,9 @@ function App() {
                                 </Router>
                                 <Router path="/translator">
                                     <Translator />
+                                </Router>
+                                <Router path="/image-captioning">
+                                    <ImageCaptioning />
                                 </Router>
                             </Switch>
                             <Footer />

@@ -109,6 +109,7 @@ const SpeechToText = () => {
 
     useEffect(() => {
         // effect
+        console.log(mediaBlobUrl);
         setRecordedAudio(mediaBlobUrl);
     }, [mediaBlobUrl])
 
@@ -124,7 +125,7 @@ const SpeechToText = () => {
 
             const ext = audioBlob.type.split("/")[1];
 
-            const audiofile = new File([audioBlob], `${uuidv4()}.${ext}`, { type: audioBlob.type })
+            const audiofile = new File([audioBlob], `${uuidv4()}.${"wav"}`, { type: "audio/wav" })
 
             console.log(audiofile);
 

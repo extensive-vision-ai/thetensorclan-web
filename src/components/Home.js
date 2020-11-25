@@ -46,6 +46,12 @@ const Home = () => {
             url: "text-classifiers",
         },
         {
+            title: "Speech to Text",
+            body: "Try saying a word and my model will convert it to text !",
+            btntext: "Go to SpeechToText",
+            url: "speech-to-text",
+        },
+        {
             title: "Indian Face Recognizer",
             body:
                 "I've trained the model to recognize 10 Indian people Faces !",

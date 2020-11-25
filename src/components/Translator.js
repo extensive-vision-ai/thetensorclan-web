@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Button, Col, Form, Row, Spinner } from "react-bootstrap";
+import { Alert, Button, Col, Form, Row, Spinner, Toast } from "react-bootstrap";
 import FadeInContainer from "./animated/FadeInContainer";
 
 import { TRANSLATOR_ENDPOINT } from "../constants/APIEndpoints";
@@ -110,8 +110,8 @@ const Translator = () => {
                                         Translating...
                                     </>
                                 ) : (
-                                    "Übersetzen!"
-                                )}
+                                        "Übersetzen!"
+                                    )}
                             </Button>
                         </Row>
                     </Col>
@@ -132,6 +132,19 @@ const Translator = () => {
                         </Form.Group>
                     </Col>
                 </Row>
+
+                <Toast
+                    onClose={() => setMessage("")}
+                    show={message !== ""}
+                    className="mx-auto m-3 bg-dark text-white shadow-lg justify-content-center"
+                    as={Row}
+                >
+                    <Toast.Header>
+                        <strong className="mr-auto">Message</strong>
+                        <small>just now</small>
+                    </Toast.Header>
+                    <Toast.Body>{message}</Toast.Body>
+                </Toast>
             </Form>
         </FadeInContainer>
     );

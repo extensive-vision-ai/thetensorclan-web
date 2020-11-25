@@ -8,3 +8,4 @@ export const TEXT_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/text`;
 export const STYLE_TRANSFER_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/style-transfer`;
 export const TRANSLATOR_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/text/translate`;
 export const IMAGE_CAPTION_ENDPOINT = `https://thetensorclan-backend.herokuapp.com/image-captioning`;
+export const SPEECH_TO_TEXT = `https://thetensorclan-backend.herokuapp.com/speech-to-text`;

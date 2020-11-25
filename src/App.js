@@ -20,6 +20,7 @@ import {
     MnistVae,
     StyleTransfer,
     ImageCaptioning,
+    SpeechToText,
 } from "./components";
 
 import ScrollToTop from "./components/helpers/ScrollToTop";
@@ -97,6 +98,9 @@ function App() {
                                 </Router>
                                 <Router path="/image-captioning">
                                     <ImageCaptioning />
+                                </Router>
+                                <Router path="/speech-to-text">
+                                    <SpeechToText />
                                 </Router>
                             </Switch>
                             <Footer />

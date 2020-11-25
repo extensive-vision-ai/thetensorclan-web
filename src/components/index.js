@@ -15,3 +15,4 @@ export { default as TextClassifier } from "./TextClassifier";
 export { default as MnistVae } from "./MnistVae";
 export { default as StyleTransfer } from "./StyleTransfer";
 export { default as ImageCaptioning } from "./ImageCaptioning";
+export { default as SpeechToText } from "./SpeechToText";

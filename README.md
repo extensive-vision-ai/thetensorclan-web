@@ -1,5 +1,7 @@
 # TheTensorClan - Web
 
+## New Website ! : [https://tensorclan.tech](https://tensorclan.tech)
+
 ## Website: [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
 
 ## 🎬 In Action

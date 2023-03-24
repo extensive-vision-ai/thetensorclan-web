@@ -1,5 +1,7 @@
 # TheTensorClan - Web
 
+## Backup Website: [https://master.d165apizgrkyke.amplifyapp.com/](https://master.d165apizgrkyke.amplifyapp.com/)
+
 ## New Website ! : [https://tensorclan.tech](https://tensorclan.tech)
 
 ## Website: [https://thetensorclan-web.herokuapp.com/](https://thetensorclan-web.herokuapp.com/)
